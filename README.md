@@ -1,1 +1,1 @@
-# ALLinonefast
+# All-one
