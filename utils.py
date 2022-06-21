@@ -3,8 +3,19 @@ import random
 import nltk
 import gensim
 
+#added
+import boto3
+import botocore
+
+s3 = boto3.resource('s3')
+bucket = s3.Bucket('api-cosmodomain')
+for obj in bucket.objects.all():
+    key = obj.key
+    body = obj.get()['Body'].read()cd down
+#added    
+
 def load_model():
-    model = gensim.models.KeyedVectors.load_word2vec_format('https://api-cosmodomain.s3.ap-south-1.amazonaws.com/pruned.word2vec.txt', binary=False)
+    model = gensim.models.KeyedVectors.load_word2vec_format(body, binary=False)
     return model 
                  
 def generate_tlds(word):
