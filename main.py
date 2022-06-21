@@ -11,16 +11,16 @@ from utils import (
         generate_top_10,
 )
 
-from aws_utils import download_from_s3
+#from aws_utils import download_from_s3
 
 app = Flask(__name__)
 
-S3_BUCKET_NAME = os.getenv('S3_BUCKET_NAME')
-KEY_NAME = os.getenv('KEY_NAME')
-DOWNLOAD_FILE_NAME = os.getenv('DOWNLOAD_FILE_NAME')
+#S3_BUCKET_NAME = os.getenv('S3_BUCKET_NAME')
+#KEY_NAME = os.getenv('KEY_NAME')
+#DOWNLOAD_FILE_NAME = os.getenv('DOWNLOAD_FILE_NAME')
 
-if not os.path.exists(DOWNLOAD_FILE_NAME):
-    download_from_s3(S3_BUCKET_NAME,KEY_NAME,DOWNLOAD_FILE_NAME)
+#if not os.path.exists(DOWNLOAD_FILE_NAME):
+#   download_from_s3(S3_BUCKET_NAME,KEY_NAME,DOWNLOAD_FILE_NAME)
 
 @app.route('/',methods=["GET","OPTIONS"])
 @cross_origin()
