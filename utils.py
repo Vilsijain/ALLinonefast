@@ -11,7 +11,7 @@ s3 = boto3.resource('s3')
 bucket = s3.Bucket('api-cosmodomain')
 for obj in bucket.objects.all():
     key = obj.key
-    body = obj.get()['Body'].read()cd down
+    body = obj.get()['Body'].read()
 #added    
 
 def load_model():
