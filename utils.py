@@ -7,6 +7,10 @@ import gensim
 import boto3
 import botocore
 
+
+s3 = boto3.resource('s3',aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+    aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
+)
 s3 = boto3.resource('s3')
 bucket = s3.Bucket('api-cosmodomain')
 for obj in bucket.objects.all():
